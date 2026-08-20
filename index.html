@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Loose-End Digest · Kanban PoC</title>
+<link rel="stylesheet" href="vendor/jkanban.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Daily Loose-End Digest</h1>
+  <span class="tag">PoC · read-only</span>
+  <span class="note">Wed 20 Aug 2026 · cutoff 18:00 · mock data — cards link to example permalinks</span>
+</div>
+
+<div class="wrap">
+  <div id="board"></div>
+</div>
+
+<div class="footer">
+  Proof-of-concept: <b>jKanban</b> (vanilla JS, no build, Apache-2.0, vendored). Columns = digest status buckets;
+  cards carry a real <code>&lt;a&gt;</code> so they are tap-to-open on mobile. Board is read-only
+  (<code>dragItems/dragBoards=false</code>). Wide = columns side by side; narrow = stacked (jKanban responsive).
+</div>
+
+<script src="vendor/jkanban.min.js"></script>
+<script>
+// helper: build a card with a clickable thread link (real <a> => tappable on mobile)
+function card(id, chan, excerpt, href) {
+  return {
+    id: id,
+    title:
+      '<div class="chan">' + chan + '</div>' +
+      '<div class="excerpt">' + excerpt + '</div>' +
+      '<a class="open" href="' + href + '" target="_blank" rel="noopener">open thread &#8599;</a>',
+    class: ''
+  };
+}
+
+var boards = [
+  {
+    id: 'col-new', class: 'col-new',
+    title: '&#128195; New today',
+    item: [
+      card('n1', '#quality', 'Confirm vendor chose SOP v3 over v2 for the batch release', 'https://example.com/thread/1001'),
+      card('n2', '#amris', 'WHO GLASS dashboard download — awaiting Emily confirmation', 'https://example.com/thread/1002')
+    ]
+  },
+  {
+    id: 'col-progress', class: 'col-progress',
+    title: '&#8599; Progress today',
+    item: [
+      card('p1', '#comms', 'Draft of the EC meeting minutes circulated for review', 'https://example.com/thread/1003')
+    ]
+  },
+  {
+    id: 'col-yet', class: 'col-yet',
+    title: '&#9203; Yet to start',
+    item: [
+      card('y1', '#infra', 'Decide on mosh UDP 60000-61000 port range', 'https://example.com/thread/1004'),
+      card('y2', '#trip', 'Shortlist EVA vs CX for 2027 Canada PE fares', 'https://example.com/thread/1005'),
+      card('y3', '#proc', 'Citi Prestige mileage transfer window check', 'https://example.com/thread/1006')
+    ]
+  },
+  {
+    id: 'col-stalled', class: 'col-stalled',
+    title: '&#128721; Stalled &gt;7d',
+    item: [
+      card('s1', '#hen', 'Follow up on RCHE out-of-stock list status', 'https://example.com/thread/1007')
+    ]
+  },
+  {
+    id: 'col-resolved', class: 'col-resolved',
+    title: '&#10004; Resolved today',
+    item: [
+      card('r1', '#ops', 'Slack archive nightly job back to green', 'https://example.com/thread/1008'),
+      card('r2', '#data', 'WHONET 23 version check complete', 'https://example.com/thread/1009')
+    ]
+  },
+  {
+    id: 'col-obsolete', class: 'col-obsolete',
+    title: '&#129427; Marked obsolete',
+    item: [
+      card('o1', '#hr', 'Stale biosafety training reminder (superseded)', 'https://example.com/thread/1010')
+    ]
+  }
+];
+
+var kanban = new jKanban({
+  element: '#board',
+  gutter: '12px',
+  responsive: '960',          // below 960px wide -> boards auto-stack full-width
+  responsivePercentage: true, // fluid columns on wide
+  dragBoards: false,          // read-only
+  dragItems: false,           // read-only
+  itemAddOptions: { enabled: false },
+  click: function (el) { /* cards are not drag/edit; only the card link navigates */ },
+  boards: boards
+});
+
+// inject per-column counts into the headers
+document.querySelectorAll('.kanban-board').forEach(function (b) {
+  var c = b.querySelectorAll('.kanban-item').length;
+  var span = document.createElement('span');
+  span.className = 'count';
+  span.textContent = c;
+  b.querySelector('header .kanban-title-board').appendChild(span);
+});
+</script>
+</body>
+</html>

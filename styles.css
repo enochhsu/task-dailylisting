@@ -1,0 +1,124 @@
+/* PoC: Daily Loose-End Digest Kanban — theme + responsive */
+:root {
+  --bg: #f4f5f7;
+  --panel: #e9ebee;
+  --ink: #172b4d;
+  --muted: #5e6c84;
+  --accent: #0a66c2;
+  --card: #ffffff;
+  --shadow: 0 1px 2px rgba(9, 30, 66, 0.13), 0 0 1px rgba(9, 30, 66, 0.1);
+  --radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid #e4e7ec;
+  padding: 14px 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.topbar h1 { font-size: 18px; margin: 0; margin-right: auto; }
+.topbar .tag {
+  background: #eef3fb;
+  color: var(--accent);
+  border: 1px solid #c8d7ee;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.topbar .note { color: var(--muted); font-size: 12.5px; }
+
+.wrap { padding: 18px; }
+
+/* Let jKanban drive column widths + responsive stacking (respPercentage handles
+   flat width, diagonal heights = landscape = portrait) */
+.kanban-container {
+  position: relative;
+  width: 100%;
+}
+.kanban-board {
+  background: var(--panel);
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-width: 150px; /* keep columns usable; wrap gracefully if too many for the width */
+}
+.kanban-board header {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(9, 30, 66, 0.08);
+}
+.kanban-title-board {
+  font-size: 13px !important;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.kanban-title-board .count {
+  margin-left: auto;
+  background: rgba(9, 30, 66, 0.08);
+  color: var(--muted);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 7px;
+}
+.kanban-drag { padding: 10px; min-height: 120px; }
+
+/* column status accents */
+.col-new   header { background: #dce9fa; }
+.col-progress header { background: #e0efdb; }
+.col-yet    header { background: #faf3da; }
+.col-stalled header { background: #fbe4e4; }
+.col-resolved header { background: #e5e7eb; }
+.col-obsolete header { background: #f2e6f6; }
+
+/* cards (items) */
+.kanban-item {
+  background: var(--card);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(9, 30, 66, 0.06);
+  line-height: 1.45;
+}
+.kanban-item .chan {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 2px;
+}
+.kanban-item .excerpt { font-size: 13.5px; color: var(--ink); margin-bottom: 6px; }
+.kanban-item a.open {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+.kanban-item a.open:hover { text-decoration: underline; }
+
+/* read-only cards should not look draggable */
+.kanban-item { cursor: default; }
+
+.footer { padding: 6px 20px 18px; color: var(--muted); font-size: 12px; }
+
+/* responsive: jKanban auto-stacks below its `responsive` breakpoint;
+   gentle extra polish under 480px */
+@media (max-width: 480px) {
+  .wrap { padding: 12px; }
+  .kanban-board { min-width: 100%; }
+}
