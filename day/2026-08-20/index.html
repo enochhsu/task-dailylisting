@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Loose-End Digest · Kanban — 2026-08-20</title>
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Daily Loose-End Digest</h1>
+  <span class="tag">archived kanban · read-only</span>
+  <span class="note">Wed 20 Aug 2026 · cutoff 18:00 · mock data — thread links are dummy</span>
+</div>
+
+<div class="wrap">
+  <div id="board"></div>
+</div>
+
+<div class="footer">
+  Archive entry for 2026-08-20. Board is read-only (<code>dragItems/dragBoards=false</code>); each card = a loose-end from the daily 18:30 digest, with channel name + excerpt + a real <code>&lt;a&gt;</code> thread link (tap-to-open on mobile). Wide = 6 columns; narrow = stacked.
+  <br><a href="../../">&#8592; Archive index</a>
+</div>
+
+<script src="../../vendor/jkanban.min.js"></script>
+<script>
+function card(id, chan, excerpt, href) {
+  return {
+    id: id,
+    title:
+      '<div class="chan">' + chan + '</div>' +
+      '<div class="excerpt">' + excerpt + '</div>' +
+      '<a class="open" href="' + href + '" target="_blank" rel="noopener">open thread &#8599;</a>',
+    class: ''
+  };
+}
+
+var boards = [
+  {
+    id: 'col-new', class: 'col-new',
+    title: '&#128195; New today',
+    item: [
+      card('n1', 'quality', 'Vendor confirmed SOP v3 supersedes v2 for batch release — sign-off needed', 'https://example-org.slack.com/archives/C012345/1234567890.000001?thread_ts=1234567890.000001&channel=C012345&message_ts=1234567890.000045'),
+      card('n2', 'amris', 'WHO GLASS dashboard download complete — awaiting CDB confirmation', 'https://example-org.slack.com/archives/C045678/1234567891.000002?thread_ts=1234567891.000002&channel=C045678&message_ts=1234567891.000050')
+    ]
+  },
+  {
+    id: 'col-progress', class: 'col-progress',
+    title: '&#8599; Progress today',
+    item: [
+      card('p1', 'comms-ec', 'EC meeting minutes draft circulated; two members to review by Fri', 'https://example-org.slack.com/archives/C023456/1234567892.000003?thread_ts=1234567892.000003&channel=C023456&message_ts=1234567892.000060')
+    ]
+  },
+  {
+    id: 'col-yet', class: 'col-yet',
+    title: '&#9203; Yet to start',
+    item: [
+      card('y1', 'infra', 'Decide on mosh UDP 60000-61000 port range for remote access', 'https://example-org.slack.com/archives/C034567/1234567893.000004?thread_ts=1234567893.000004&channel=C034567&message_ts=1234567893.000070'),
+      card('y2', 'trip-2027-canada', 'Shortlist EVA vs CX for 2027 Canada premium-economy fares', 'https://example-org.slack.com/archives/C045678/1234567894.000005?thread_ts=1234567894.000005&channel=C045678&message_ts=1234567894.000080')
+    ]
+  },
+  {
+    id: 'col-stalled', class: 'col-stalled',
+    title: '&#128721; Stalled &gt;7d',
+    item: [
+      card('s1', 'amris', 'Follow up on RCHE out-of-stock list status (last reply 9d ago)', 'https://example-org.slack.com/archives/C056789/1234567895.000006?thread_ts=1234567895.000006&channel=C056789&message_ts=1234567895.000090')
+    ]
+  },
+  {
+    id: 'col-resolved', class: 'col-resolved',
+    title: '&#10004; Resolved today',
+    item: [
+      card('r1', 'ops', 'Slack archive nightly job back to green', 'https://example-org.slack.com/archives/C067890/1234567896.000007?thread_ts=1234567896.000007&channel=C067890&message_ts=1234567896.000100'),
+      card('r2', 'surveillance', 'WHONET 23 version check complete', 'https://example-org.slack.com/archives/C078901/1234567897.000008?thread_ts=1234567897.000008&channel=C078901&message_ts=1234567897.000110')
+    ]
+  },
+  {
+    id: 'col-obsolete', class: 'col-obsolete',
+    title: '&#129427; Marked obsolete',
+    item: [
+      card('o1', 'hr', 'Stale biosafety training reminder (superseded by new policy)', 'https://example-org.slack.com/archives/C089012/1234567898.000009?thread_ts=1234567898.000009&channel=C089012&message_ts=1234567898.000120')
+    ]
+  }
+];
+
+var kanban = new jKanban({
+  element: '#board',
+  gutter: '12px',
+  responsive: '960',
+  responsivePercentage: true,
+  dragBoards: false,
+  dragItems: false,
+  itemAddOptions: { enabled: false },
+  boards: boards
+});
+
+document.querySelectorAll('.kanban-board').forEach(function (b) {
+  var c = b.querySelectorAll('.kanban-item').length;
+  var span = document.createElement('span');
+  span.className = 'count';
+  span.textContent = c;
+  b.querySelector('header .kanban-title-board').appendChild(span);
+});
+</script>
+</body>
+</html>
