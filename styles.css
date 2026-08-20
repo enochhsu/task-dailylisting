@@ -44,12 +44,12 @@ body {
 
 /* Let jKanban drive column widths + responsive stacking (respPercentage handles
    flat width, diagonal heights = landscape = portrait) */
-/* Layout owned by CSS Grid (deterministic, not jKanban's fragile float/%):
-   auto-fill -> as many equal columns as fit; below ~1 column's min width -> stacked.
-   Neutralise the inline width/gutter jKanban writes on each board. */
+/* Layout owned by CSS Grid (deterministic): auto-fit -> as many equal columns as
+   fit AND they stretch to fill the row (no empty space on the right); below ~1
+   column's min width -> stacked. Neutralise jKanban's inline width/gutter. */
 .kanban-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 12px;
   width: 100%;
 }
