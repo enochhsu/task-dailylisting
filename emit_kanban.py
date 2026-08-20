@@ -137,6 +137,7 @@ var kanban = new jKanban({{
   dragBoards: false,
   dragItems: false,
   itemAddOptions: {{ enabled: false }},
+  propagationHandlers: ['click'],
   boards: {boards_json}
 }});
 document.querySelectorAll('.kanban-board').forEach(function (b) {{
