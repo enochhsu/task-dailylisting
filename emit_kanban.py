@@ -115,6 +115,7 @@ DAY_TEMPLATE = """<!DOCTYPE html>
   <h1>Daily Loose-End Digest</h1>
   <span class="tag">archived kanban · read-only</span>
   <span class="note">{label} · cutoff 18:00</span>
+  <span class="ctrls"><button id="collAll" type="button">Collapse all</button></span>
 </div>
 
 <div class="wrap">
@@ -145,6 +146,48 @@ document.querySelectorAll('.kanban-board').forEach(function (b) {{
   var s = document.createElement('span'); s.className = 'count'; s.textContent = c;
   b.querySelector('header .kanban-title-board').appendChild(s);
 }});
+// column collapse (viewing preference; persisted in localStorage)
+var CK = 'kanban_collapsed';
+function cload() {{ try {{ return JSON.parse(localStorage.getItem(CK) || '[]'); }} catch(e) {{ return []; }} }}
+function csave(a) {{ localStorage.setItem(CK, JSON.stringify(a)); }}
+function cid(b) {{ return b.dataset.id; }}
+function repaint() {{
+  document.querySelectorAll('.kanban-board').forEach(function (bb) {{
+    var b = bb.querySelector('.kanban-title-collapse'); if (!b) return;
+    var c = bb.classList.contains('collapsed');
+    b.textContent = c ? '\u25B6' : '\u25BC'; b.setAttribute('aria-expanded', String(!c));
+  }});
+}}
+var allBtn = document.getElementById('collAll');
+function setAllBtn() {{
+  var n = document.querySelectorAll('.kanban-board').length;
+  allBtn.textContent = cload().length >= n ? 'Expand all' : 'Collapse all';
+}}
+document.querySelectorAll('.kanban-board').forEach(function (b) {{
+  var btn = document.createElement('button');
+  btn.type = 'button'; btn.className = 'kanban-title-collapse';
+  btn.setAttribute('aria-label', 'Toggle column');
+  btn.setAttribute('aria-expanded', 'true');
+  b.querySelector('header').insertBefore(btn, b.querySelector('header').firstChild);
+  btn.addEventListener('click', function (e) {{
+    e.stopPropagation();
+    b.classList.toggle('collapsed');
+    var a = cload(), i = a.indexOf(cid(b));
+    if (b.classList.contains('collapsed')) {{ if (i < 0) a.push(cid(b)); }}
+    else {{ if (i >= 0) a.splice(i, 1); }}
+    csave(a); repaint(); setAllBtn();
+  }});
+  if (cload().indexOf(cid(b)) >= 0) b.classList.add('collapsed');
+}});
+function collAll() {{
+  var boards = Array.from(document.querySelectorAll('.kanban-board'));
+  var allCollapsed = cload().length >= boards.length;
+  var a = allCollapsed ? [] : boards.map(cid);
+  boards.forEach(function (b) {{ b.classList.toggle('collapsed', !allCollapsed); }});
+  csave(a); repaint(); setAllBtn();
+}}
+if (allBtn) allBtn.addEventListener('click', collAll);
+repaint(); setAllBtn();
 </script>
 </body>
 </html>
