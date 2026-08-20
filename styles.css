@@ -44,15 +44,23 @@ body {
 
 /* Let jKanban drive column widths + responsive stacking (respPercentage handles
    flat width, diagonal heights = landscape = portrait) */
+/* Layout owned by CSS Grid (deterministic, not jKanban's fragile float/%):
+   auto-fill -> as many equal columns as fit; below ~1 column's min width -> stacked.
+   Neutralise the inline width/gutter jKanban writes on each board. */
 .kanban-container {
-  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 12px;
   width: 100%;
 }
 .kanban-board {
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  float: none !important;
   background: var(--panel);
   border-radius: var(--radius);
   overflow: hidden;
-  min-width: 150px; /* keep columns usable; wrap gracefully if too many for the width */
 }
 .kanban-board header {
   padding: 10px 12px;
@@ -116,9 +124,8 @@ body {
 
 .footer { padding: 6px 20px 18px; color: var(--muted); font-size: 12px; }
 
-/* responsive: jKanban auto-stacks below its `responsive` breakpoint;
-   gentle extra polish under 480px */
-@media (max-width: 480px) {
+@media (max-width: 520px) {
   .wrap { padding: 12px; }
-  .kanban-board { min-width: 100%; }
+  /* phones: force a single stacked column (narrow = vertical) */
+  .kanban-container { grid-template-columns: 1fr; }
 }
