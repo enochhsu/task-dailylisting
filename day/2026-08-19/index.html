@@ -12,7 +12,7 @@
 <div class="topbar">
   <h1>Daily Loose-End Digest</h1>
   <span class="tag">archived kanban · read-only</span>
-  <span class="note">Tue 19 Aug 2026 · cutoff 18:00 · mock data — thread links are dummy</span>
+  <span class="note">Wed 19 Aug 2026 · cutoff 18:00</span>
 </div>
 
 <div class="wrap">
@@ -20,71 +20,13 @@
 </div>
 
 <div class="footer">
-  Archive entry for 2026-08-20. Board is read-only (<code>dragItems/dragBoards=false</code>); each card = a loose-end from the daily 18:30 digest, with channel name + excerpt + a real <code>&lt;a&gt;</code> thread link (tap-to-open on mobile). Wide = 6 columns; narrow = stacked.
+  Archive entry for 2026-08-19. Read-only (<code>dragItems/dragBoards=false</code>); each card = a loose-end from the
+  daily 18:30 digest (channel + excerpt + thread link, tap-to-open on mobile).
   <br><a href="../../">&#8592; Archive index</a>
 </div>
 
 <script src="../../vendor/jkanban.min.js"></script>
 <script>
-function card(id, chan, excerpt, href) {
-  return {
-    id: id,
-    title:
-      '<div class="chan">' + chan + '</div>' +
-      '<div class="excerpt">' + excerpt + '</div>' +
-      '<a class="open" href="' + href + '" target="_blank" rel="noopener">open thread &#8599;</a>',
-    class: ''
-  };
-}
-
-var boards = [
-  {
-    id: 'col-new', class: 'col-new',
-    title: '&#128195; New today',
-    item: [
-      card('n1', 'quality', 'Vendor confirmed SOP v3 supersedes v2 for batch release — sign-off needed', 'https://example-org.slack.com/archives/C012345/1234567890.000001?thread_ts=1234567890.000001&channel=C012345&message_ts=1234567890.000045'),
-      card('n2', 'amris', 'WHO GLASS dashboard download complete — awaiting CDB confirmation', 'https://example-org.slack.com/archives/C045678/1234567891.000002?thread_ts=1234567891.000002&channel=C045678&message_ts=1234567891.000050')
-    ]
-  },
-  {
-    id: 'col-progress', class: 'col-progress',
-    title: '&#8599; Progress today',
-    item: [
-      card('p1', 'comms-ec', 'EC meeting minutes draft circulated; two members to review by Fri', 'https://example-org.slack.com/archives/C023456/1234567892.000003?thread_ts=1234567892.000003&channel=C023456&message_ts=1234567892.000060')
-    ]
-  },
-  {
-    id: 'col-yet', class: 'col-yet',
-    title: '&#9203; Yet to start',
-    item: [
-      card('y1', 'infra', 'Decide on mosh UDP 60000-61000 port range for remote access', 'https://example-org.slack.com/archives/C034567/1234567893.000004?thread_ts=1234567893.000004&channel=C034567&message_ts=1234567893.000070'),
-      card('y2', 'trip-2027-canada', 'Shortlist EVA vs CX for 2027 Canada premium-economy fares', 'https://example-org.slack.com/archives/C045678/1234567894.000005?thread_ts=1234567894.000005&channel=C045678&message_ts=1234567894.000080'),
-      card('y3', 'ops', 'Slack archive nightly job failing — investigate before tomorrow', 'https://example-org.slack.com/archives/C056789/1234567800.000010?thread_ts=1234567800.000010&channel=C056789&message_ts=1234567800.000090')
-    ]
-  },
-  {
-    id: 'col-stalled', class: 'col-stalled',
-    title: '&#128721; Stalled &gt;7d',
-    item: [
-      card('s1', 'amris', 'Follow up on RCHE out-of-stock list status (last reply 9d ago)', 'https://example-org.slack.com/archives/C056789/1234567895.000006?thread_ts=1234567895.000006&channel=C056789&message_ts=1234567895.000090')
-    ]
-  },
-  {
-    id: 'col-resolved', class: 'col-resolved',
-    title: '&#10004; Resolved today',
-    item: [
-      card('r2', 'surveillance', 'WHONET 23 version check complete', 'https://example-org.slack.com/archives/C078901/1234567897.000008?thread_ts=1234567897.000008&channel=C078901&message_ts=1234567897.000110')
-    ]
-  },
-  {
-    id: 'col-obsolete', class: 'col-obsolete',
-    title: '&#129427; Marked obsolete',
-    item: [
-      card('o1', 'hr', 'Stale biosafety training reminder (superseded by new policy)', 'https://example-org.slack.com/archives/C089012/1234567898.000009?thread_ts=1234567898.000009&channel=C089012&message_ts=1234567898.000120')
-    ]
-  }
-];
-
 var kanban = new jKanban({
   element: '#board',
   gutter: '12px',
@@ -93,15 +35,12 @@ var kanban = new jKanban({
   dragBoards: false,
   dragItems: false,
   itemAddOptions: { enabled: false },
-  boards: boards
+  boards: [{"id": "col-new", "class": "col-new", "title": "New today", "item": [{"id": "new-0", "class": "", "title": "<div class=\"chan\">hermes-llm-model</div><div class=\"excerpt\">A/B test Deepseek V4 Flash vs MiniMax M3 as Hermes brain: feasibility delivered (no native day-of-week rotation; model pinned per session); day-slot decision /…</div><div class=\"meta\">open 2.0d · idle 2.0d · decision 2.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQG6TKGBY/p1787017521729769?thread_ts=1787017134.984329&amp;channel=C0BQG6TKGBY&amp;message_ts=1787017521.729769\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "new-1", "class": "", "title": "<div class=\"chan\">hermes-llm-model</div><div class=\"excerpt\">Web-to-API for other LLMs: landscape + GLM route delivered (native per-token API vs cookie proxy vs subscription); which target/path to spike — decision pending</div><div class=\"meta\">open 2.0d · idle <1d · decision 2.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQG6TKGBY/p1787042326018769?thread_ts=1787041657.187739&amp;channel=C0BQG6TKGBY&amp;message_ts=1787042326.018769\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "new-2", "class": "", "title": "<div class=\"chan\">zurich-8133673</div><div class=\"excerpt\">Zurich policy 8133673 — valuation statement (1 Dec 2025–30 Apr 2026) sent by HKZ Help Point 11 May 2026; confirm attachment received, follow-up open</div><div class=\"meta\">open <1d · idle <1d · decision <1d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BRZ87U4N4/p1787102384793179\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "new-3", "class": "", "title": "<div class=\"chan\">work-meeting-schedule</div><div class=\"excerpt\">AMRD meeting-schedule → Future journal + meeting-node automation: feasibility assessment delivered (overall HIGH except Step F, gating); go/no-go pending</div><div class=\"meta\">open <1d · idle <1d · decision <1d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQPGVTDF1/p1787104454760079?thread_ts=1787102889.695399&amp;channel=C0BQPGVTDF1&amp;message_ts=1787104454.760079\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "new-4", "class": "", "title": "<div class=\"chan\">DM</div><div class=\"excerpt\">Hermes Skills versioning: research ways to version the skills Hermes has acquired — action pending</div><div class=\"meta\">open <1d · idle <1d · decision <1d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/D0BPA78Q5SB/p1787119783623109?thread_ts=1787118676.997459&amp;channel=D0BPA78Q5SB&amp;message_ts=1787119783.623109\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "new-5", "class": "", "title": "<div class=\"chan\">DM</div><div class=\"excerpt\">Enoch HSU Parsing solution: not upgrading to Pro ($500/mo); may explore third-party parsing (incl. landing.ai) — decision pending</div><div class=\"meta\">open <1d · idle <1d · decision <1d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/D051FQXGVHC/p1787129860291359\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "new-6", "class": "", "title": "<div class=\"chan\">DM</div><div class=\"excerpt\">Hermes Google Drive access: Slack Drive app + direct link give agent no access (verified NOT_AUTHENTICATED); decide — google-workspace OAuth setup vs opening…</div><div class=\"meta\">open <1d · idle <1d · decision <1d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/D0BPA78Q5SB/p1787132025142429?thread_ts=1787131986.854489&amp;channel=D0BPA78Q5SB&amp;message_ts=1787132025.142429\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}]}, {"id": "col-quiet", "class": "col-quiet", "title": "In progress (quiet)", "item": [{"id": "quiet-0", "class": "", "title": "<div class=\"chan\">workflowy-search</div><div class=\"excerpt\">2 WHONET-shaped stalled candidates found (CHP website surveillance draft tree; RCHE-ICVisit non-conforming returns) — decide whether to flag/deactivate</div><div class=\"meta\">open 3.0d · idle 4.0d · decision 4.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C052125D7CH/p1786860380576559?thread_ts=1786858169.846609&amp;channel=C052125D7CH&amp;message_ts=1786860380.576559\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "quiet-1", "class": "", "title": "<div class=\"chan\">hermes-llm-model</div><div class=\"excerpt\">Gemini role validated as verified critic only (all other hypotheses rejected); refactored roadmap delivered — build go-ahead pending</div><div class=\"meta\">open 3.0d · idle 3.0d · decision 3.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQG6TKGBY/p1786933003667939?thread_ts=1786875301.217189&amp;channel=C0BQG6TKGBY&amp;message_ts=1786933003.667939\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}]}, {"id": "col-yet", "class": "col-yet", "title": "Yet to start", "item": [{"id": "yet-0", "class": "", "title": "<div class=\"chan\">hermes-gdrive-backup</div><div class=\"excerpt\">GDrive backup automation: appraisal delivered, go/no-go pending</div><div class=\"meta\">open 5.0d · idle 7.0d · decision 7.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BPPUDLQKV/p1786580006265189?thread_ts=1786579775.357469&amp;channel=C0BPPUDLQKV&amp;message_ts=1786580006.265189\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-1", "class": "", "title": "<div class=\"chan\">skills-googlecal</div><div class=\"excerpt\">Google Calendar Hermes-side OAuth: proceed decision pending</div><div class=\"meta\">open 5.0d · idle 7.0d · decision 7.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQ192Q71S/p1786599976032499?thread_ts=1786599229.678259&amp;channel=C0BQ192Q71S&amp;message_ts=1786599976.032499\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-2", "class": "", "title": "<div class=\"chan\">skills-workflowy</div><div class=\"excerpt\">Note-tag search Option A: go-ahead pending</div><div class=\"meta\">open 5.0d · idle 6.0d · decision 6.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BPY6278RF/p1786624585229139?thread_ts=1786623770.478249&amp;channel=C0BPY6278RF&amp;message_ts=1786624585.229139\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-3", "class": "", "title": "<div class=\"chan\">skills-facebook-savedpost</div><div class=\"excerpt\">Facebook saved-post/video summarizer: decision pending</div><div class=\"meta\">open 5.0d · idle 6.0d · decision 6.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQ0GR62FM/p1786685711333409?thread_ts=1786685618.675169&amp;channel=C0BQ0GR62FM&amp;message_ts=1786685711.333409\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-4", "class": "", "title": "<div class=\"chan\">hermes-predelivery-critic</div><div class=\"excerpt\">Second LLM as pre-delivery critic: decision pending</div><div class=\"meta\">open 5.0d · idle 6.0d · decision 6.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BR157E05N/p1786685975938419?thread_ts=1786685854.104279&amp;channel=C0BR157E05N&amp;message_ts=1786685975.938419\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-5", "class": "", "title": "<div class=\"chan\">others-trip-2027-canada</div><div class=\"excerpt\">Transport: day-by-day public-transit itinerary offer</div><div class=\"meta\">open 4.0d · idle 5.0d · decision 5.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQAHNMT5K/p1786767903884139?thread_ts=1786766627.168129&amp;channel=C0BQAHNMT5K&amp;message_ts=1786767903.884139\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-6", "class": "", "title": "<div class=\"chan\">others-trip-2027-canada</div><div class=\"excerpt\">Accommodation: Airbnb shortlist, dates unverified</div><div class=\"meta\">open 4.0d · idle 5.0d · decision 5.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQAHNMT5K/p1786768275530479?thread_ts=1786766624.797119&amp;channel=C0BQAHNMT5K&amp;message_ts=1786768275.530479\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-7", "class": "", "title": "<div class=\"chan\">hermes-dropbox</div><div class=\"excerpt\">File-intake pipeline: dedicated-account design settled; processed-log (CSV) decision pending</div><div class=\"meta\">open 5.0d · idle 4.0d · decision 4.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQ6SYG0NN/p1786849254680389?thread_ts=1786687306.400209&amp;channel=C0BQ6SYG0NN&amp;message_ts=1786849254.680389\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-8", "class": "", "title": "<div class=\"chan\">hermes-dashboard</div><div class=\"excerpt\">Dashboard node: 7-item spec consolidated; 8 blocking questions (node assignment / storage volume+threshold / alert dest / cadence / mirror) await reply — build…</div><div class=\"meta\">open 3.0d · idle 2.0d · decision 2.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQJ44TML6/p1786977485712819?thread_ts=1786926024.480289&amp;channel=C0BQJ44TML6&amp;message_ts=1786977485.712819\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}]}, {"id": "col-resolved", "class": "col-resolved", "title": "Resolved today", "item": [{"id": "resolved-0", "class": "", "title": "<div class=\"chan\">DM</div><div class=\"excerpt\">Hermes Profile impression: confirmation pending</div><div class=\"meta\">open 5.0d · idle 6.0d · decision 6.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/D0BPA78Q5SB/p1786668858391659?thread_ts=1786580182.458539&amp;channel=D0BPA78Q5SB&amp;message_ts=1786668858.391659\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "resolved-1", "class": "", "title": "<div class=\"chan\">others-trip-2027-canada</div><div class=\"excerpt\">Flights: EveryMile vs Red — single-card vs two-card strategy pending</div><div class=\"meta\">open 4.0d · idle 5.0d · decision 5.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQAHNMT5K/p1786795125587309?thread_ts=1786766622.549759&amp;channel=C0BQAHNMT5K&amp;message_ts=1786795125.587309\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "resolved-2", "class": "", "title": "<div class=\"chan\">workflowy-search</div><div class=\"excerpt\">Workflowy: health-survey call-for-return (Dr Edmond MA) outstanding; Open Data Plan return — Kelvin-YU nil reply not logged (event Aug 6-11)</div><div class=\"meta\">open 3.0d · idle 3.0d · decision 3.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C052125D7CH/p1786948551883799?thread_ts=1786947543.867489&amp;channel=C052125D7CH&amp;message_ts=1786948551.883799\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "resolved-3", "class": "", "title": "<div class=\"chan\">work-email-grammar-checker-meta</div><div class=\"excerpt\">Dedicated email-grammar channel: poller built, reply path blocked — user must grant chat:write to user-token scopes + refresh token</div><div class=\"meta\">open 3.0d · idle 3.0d · decision 3.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQRSV6R4L/p1786963048452509?thread_ts=1786954168.420299&amp;channel=C0BQRSV6R4L&amp;message_ts=1786963048.452509\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "resolved-4", "class": "", "title": "<div class=\"chan\">skills-slack-daily-progress</div><div class=\"excerpt\">Slack not supporting opening new workspace in Hong Kong — customer-service correspondence: https://enochlok.slack.com/help/requests — outcome pending</div><div class=\"meta\">open 2.0d · idle 2.0d · decision 2.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQ6E4ANUA/p1787015242788519\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}]}, {"id": "col-obsolete", "class": "col-obsolete", "title": "Marked obsolete", "item": [{"id": "obsolete-0", "class": "", "title": "<div class=\"chan\">hermes-general</div><div class=\"excerpt\">Mattermost migration: hosted options shortlisted (Elestio/Stackhero/AccuWeb, specs + links delivered); next-step decision pending</div><div class=\"meta\">open 3.0d · idle 3.0d · decision 3.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BPVBA0SRJ/p1786959206742179?thread_ts=1786956156.944409&amp;channel=C0BPVBA0SRJ&amp;message_ts=1786959206.742179\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}]}]
 });
-
 document.querySelectorAll('.kanban-board').forEach(function (b) {
   var c = b.querySelectorAll('.kanban-item').length;
-  var span = document.createElement('span');
-  span.className = 'count';
-  span.textContent = c;
-  b.querySelector('header .kanban-title-board').appendChild(span);
+  var s = document.createElement('span'); s.className = 'count'; s.textContent = c;
+  b.querySelector('header .kanban-title-board').appendChild(s);
 });
 </script>
 </body>

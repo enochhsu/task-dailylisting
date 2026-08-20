@@ -111,6 +111,7 @@ body {
   margin-bottom: 2px;
 }
 .kanban-item .excerpt { font-size: 13.5px; color: var(--ink); margin-bottom: 6px; }
+.kanban-item .meta { font-size: 11px; color: var(--muted); margin-bottom: 6px; font-variant-numeric: tabular-nums; }
 .kanban-item a.open {
   font-size: 12px;
   font-weight: 600;
