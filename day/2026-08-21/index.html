@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Daily Loose-End Digest · Kanban — 2026-08-21</title>
+<link rel="stylesheet" href="../../styles.css?v=3">
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Daily Loose-End Digest</h1>
+  <span class="tag">archived kanban · read-only</span>
+  <span class="note">Fri 21 Aug 2026 · cutoff 18:00</span>
+  <span class="ctrls"><button id="collAll" type="button">Collapse all</button></span>
+</div>
+
+<div class="wrap">
+  <div id="board"></div>
+</div>
+
+<div class="footer">
+  Archive entry for 2026-08-21. Read-only (<code>dragItems/dragBoards=false</code>); each card = a loose-end from the
+  daily 18:30 digest (channel + excerpt + thread link, tap-to-open on mobile).
+  <br><a href="../../">&#8592; Archive index</a>
+</div>
+
+<script src="../../vendor/jkanban.min.js"></script>
+<script>
+var kanban = new jKanban({
+  element: '#board',
+  gutter: '12px',
+  responsive: '960',
+  responsivePercentage: true,
+  dragBoards: false,
+  dragItems: false,
+  itemAddOptions: { enabled: false },
+  propagationHandlers: ['click'],
+  boards: [{"id": "col-new", "class": "col-new", "title": "New today", "item": [{"id": "new-0", "class": "", "title": "<div class=\"chan\">D0BPA78Q5SB</div><div class=\"excerpt\">Here&#x27;s my read-only impression of your Workflowy (nothing touched — I only pulled from the export cache and CLI reads, no writes). *What the system is* This is…</div><div class=\"meta\">open <1d · idle 2.0d · decision 2.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/D0BPA78Q5SB/p1787133714656259?thread_ts=1787133381.760229&amp;channel=D0BPA78Q5SB&amp;message_ts=1787133714.656259\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "new-1", "class": "", "title": "<div class=\"chan\">C0BQJMM1XK5</div><div class=\"excerpt\">I&#x27;ve read both the official docs and the skill reference. Here&#x27;s my honest assessment, and it hinges on one critical finding that changes a lot. *The key…</div><div class=\"meta\">open <1d · idle 1.0d · decision 2.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQJMM1XK5/p1787152864427009?thread_ts=1787136673.127259&amp;channel=C0BQJMM1XK5&amp;message_ts=1787152864.427009\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "new-2", "class": "", "title": "<div class=\"chan\">C0BQ6E4ANUA</div><div class=\"excerpt\">The proof-of-concept is live and verified end-to-end. *GH Page URL* *&lt;https://enochhsu.github.io/kanban-poc/​*&gt; (Repo:…</div><div class=\"meta\">open <1d · idle 1.0d · decision 1.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQ6E4ANUA/p1787192793086899?thread_ts=1787185841.782839&amp;channel=C0BQ6E4ANUA&amp;message_ts=1787192793.086899\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "new-3", "class": "", "title": "<div class=\"chan\">C0BQX4AU1RP</div><div class=\"excerpt\">Proposal — the one change that relieves the most tension, offered for your decision. *The change:​* Convert the human gate from a _blanket_ &quot;never alter files…</div><div class=\"meta\">open <1d · idle <1d · decision <1d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQX4AU1RP/p1787274371342249?thread_ts=1787271114.087039&amp;channel=C0BQX4AU1RP&amp;message_ts=1787274371.342249\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "new-4", "class": "", "title": "<div class=\"chan\">C0BQJCB5VB8</div><div class=\"excerpt\">&lt;@U0BPRHRQEQJ&gt; critically appraise the technical feasibility and risk of corrupting the project tag of `#proj-chpwebsite-AMRCtrlStat-updateYY` to…</div><div class=\"meta\">open <1d · idle <1d · decision <1d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQJCB5VB8/p1787280041467649\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "new-5", "class": "", "title": "<div class=\"chan\">hermes-llm-fallback-provider</div><div class=\"excerpt\">Fallback provider: critically appraise feasibility of leveraging fallback mechanism for conditional LLM routing (no LLM gateway) — appraisal delivered,…</div><div class=\"meta\">open <1d · idle <1d · decision <1d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BRMREK90E/p17872922910?thread_ts=1787292283.021989&amp;channel=C0BRMREK90E&amp;message_ts=1787292291.0\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}]}, {"id": "col-progress", "class": "col-progress", "title": "Progress today", "item": [{"id": "progress-0", "class": "", "title": "<div class=\"chan\">skills-workflowy</div><div class=\"excerpt\">Workflowy mirror tooling: staff-confirmed official beta API + wf CLI now have mirror support (Jul 23 2026); decide whether to leverage for KIV mirror…</div><div class=\"meta\">open 1.0d · idle <1d · decision 1.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BPY6278RF/p1787218200478049\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "progress-1", "class": "", "title": "<div class=\"chan\">work-meeting-schedule</div><div class=\"excerpt\">AMRD meeting-schedule automation: user gave go-ahead (yes please); draft spec delivered, Step F flagged as gating (don&#x27;t build B-G on live data until F…</div><div class=\"meta\">open 2.0d · idle <1d · decision 1.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQPGVTDF1/p1787185950451009?thread_ts=1787102889.695399&amp;channel=C0BQPGVTDF1&amp;message_ts=1787185950.451009\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}]}, {"id": "col-quiet", "class": "col-quiet", "title": "In progress (quiet)", "item": [{"id": "quiet-0", "class": "", "title": "<div class=\"chan\">workflowy-search</div><div class=\"excerpt\">2 WHONET-shaped stalled candidates found (CHP website surveillance draft tree; RCHE-ICVisit non-conforming returns) — decide whether to flag/deactivate</div><div class=\"meta\">open 4.0d · idle 5.0d · decision 5.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C052125D7CH/p1786860380576559?thread_ts=1786858169.846609&amp;channel=C052125D7CH&amp;message_ts=1786860380.576559\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "quiet-1", "class": "", "title": "<div class=\"chan\">hermes-llm-model</div><div class=\"excerpt\">Web-to-API for other LLMs: landscape + GLM route delivered (native per-token API vs cookie proxy vs subscription); which target/path to spike — decision pending</div><div class=\"meta\">open 3.0d · idle 2.0d · decision 3.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQG6TKGBY/p1787042326018769?thread_ts=1787041657.187739&amp;channel=C0BQG6TKGBY&amp;message_ts=1787042326.018769\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "quiet-2", "class": "", "title": "<div class=\"chan\">hermes-llm-model</div><div class=\"excerpt\">A/B test Deepseek V4 Flash vs MiniMax M3 as Hermes brain: feasibility delivered (no native day-of-week rotation; model pinned per session); day-slot decision /…</div><div class=\"meta\">open 3.0d · idle 2.0d · decision 3.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQG6TKGBY/p1787017521729769?thread_ts=1787017134.984329&amp;channel=C0BQG6TKGBY&amp;message_ts=1787017521.729769\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "quiet-3", "class": "", "title": "<div class=\"chan\">zurich-8133673</div><div class=\"excerpt\">Zurich policy 8133673 — valuation statement (1 Dec 2025–30 Apr 2026) sent by HKZ Help Point 11 May 2026; confirm attachment received, follow-up open</div><div class=\"meta\">open 2.0d · idle 2.0d · decision 2.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BRZ87U4N4/p1787102384793179\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "quiet-4", "class": "", "title": "<div class=\"chan\">DM</div><div class=\"excerpt\">Hermes Skills versioning: research ways to version the skills Hermes has acquired — action pending</div><div class=\"meta\">open 2.0d · idle 2.0d · decision 2.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/D0BPA78Q5SB/p1787119783623109?thread_ts=1787118676.997459&amp;channel=D0BPA78Q5SB&amp;message_ts=1787119783.623109\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "quiet-5", "class": "", "title": "<div class=\"chan\">DM</div><div class=\"excerpt\">Hermes Google Drive access: Slack Drive app + direct link give agent no access (verified NOT_AUTHENTICATED); decide — google-workspace OAuth setup vs opening…</div><div class=\"meta\">open 2.0d · idle 2.0d · decision 2.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/D0BPA78Q5SB/p1787132025142429?thread_ts=1787131986.854489&amp;channel=D0BPA78Q5SB&amp;message_ts=1787132025.142429\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "quiet-6", "class": "", "title": "<div class=\"chan\">hermes-llm-model</div><div class=\"excerpt\">Brain-model eval: DeepSeek V4 Flash vs MiniMax M3 vs Kimi K3 — renew Kimi Allegretto (K3 access) / MiniMax subscription / stay — decision pending; Gemini…</div><div class=\"meta\">open 1.0d · idle 1.0d · decision 1.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQG6TKGBY/p1787205576426849?thread_ts=1787204135.636719&amp;channel=C0BQG6TKGBY&amp;message_ts=1787205576.426849\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}]}, {"id": "col-yet", "class": "col-yet", "title": "Yet to start", "item": [{"id": "yet-0", "class": "", "title": "<div class=\"chan\">hermes-gdrive-backup</div><div class=\"excerpt\">GDrive backup automation: appraisal delivered, go/no-go pending</div><div class=\"meta\">open 7.0d · idle 8.0d · decision 8.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BPPUDLQKV/p1786580006265189?thread_ts=1786579775.357469&amp;channel=C0BPPUDLQKV&amp;message_ts=1786580006.265189\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-1", "class": "", "title": "<div class=\"chan\">skills-googlecal</div><div class=\"excerpt\">Google Calendar Hermes-side OAuth: proceed decision pending</div><div class=\"meta\">open 7.0d · idle 8.0d · decision 8.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQ192Q71S/p1786599976032499?thread_ts=1786599229.678259&amp;channel=C0BQ192Q71S&amp;message_ts=1786599976.032499\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-2", "class": "", "title": "<div class=\"chan\">skills-workflowy</div><div class=\"excerpt\">Note-tag search Option A: go-ahead pending</div><div class=\"meta\">open 7.0d · idle 8.0d · decision 8.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BPY6278RF/p1786624585229139?thread_ts=1786623770.478249&amp;channel=C0BPY6278RF&amp;message_ts=1786624585.229139\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-3", "class": "", "title": "<div class=\"chan\">skills-facebook-savedpost</div><div class=\"excerpt\">Facebook saved-post/video summarizer: decision pending</div><div class=\"meta\">open 7.0d · idle 7.0d · decision 7.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQ0GR62FM/p1786685711333409?thread_ts=1786685618.675169&amp;channel=C0BQ0GR62FM&amp;message_ts=1786685711.333409\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-4", "class": "", "title": "<div class=\"chan\">hermes-predelivery-critic</div><div class=\"excerpt\">Second LLM as pre-delivery critic: decision pending</div><div class=\"meta\">open 7.0d · idle 7.0d · decision 7.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BR157E05N/p1786685975938419?thread_ts=1786685854.104279&amp;channel=C0BR157E05N&amp;message_ts=1786685975.938419\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-5", "class": "", "title": "<div class=\"chan\">others-trip-2027-canada</div><div class=\"excerpt\">Accommodation: Airbnb shortlist, dates unverified</div><div class=\"meta\">open 5.0d · idle 6.0d · decision 6.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQAHNMT5K/p1786768275530479?thread_ts=1786766624.797119&amp;channel=C0BQAHNMT5K&amp;message_ts=1786768275.530479\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-6", "class": "", "title": "<div class=\"chan\">others-trip-2027-canada</div><div class=\"excerpt\">Transport: day-by-day public-transit itinerary offer</div><div class=\"meta\">open 5.0d · idle 6.0d · decision 6.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQAHNMT5K/p1786767903884139?thread_ts=1786766627.168129&amp;channel=C0BQAHNMT5K&amp;message_ts=1786767903.884139\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-7", "class": "", "title": "<div class=\"chan\">hermes-dropbox</div><div class=\"excerpt\">File-intake pipeline: dedicated-account design settled; processed-log (CSV) decision pending</div><div class=\"meta\">open 7.0d · idle 5.0d · decision 5.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQ6SYG0NN/p1786849254680389?thread_ts=1786687306.400209&amp;channel=C0BQ6SYG0NN&amp;message_ts=1786849254.680389\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-8", "class": "", "title": "<div class=\"chan\">hermes-dashboard</div><div class=\"excerpt\">Dashboard node: 7-item spec consolidated; 8 blocking questions (node assignment / storage volume+threshold / alert dest / cadence / mirror) await reply — build…</div><div class=\"meta\">open 4.0d · idle 4.0d · decision 4.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQJ44TML6/p1786977485712819?thread_ts=1786926024.480289&amp;channel=C0BQJ44TML6&amp;message_ts=1786977485.712819\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "yet-9", "class": "", "title": "<div class=\"chan\">DM</div><div class=\"excerpt\">Enoch HSU Parsing solution: not upgrading to Pro ($500/mo); may explore third-party parsing (incl. landing.ai) — decision pending</div><div class=\"meta\">open 2.0d · idle 2.0d · decision 2.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/D051FQXGVHC/p1787129860291359\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}]}, {"id": "col-obsolete", "class": "col-obsolete", "title": "Marked obsolete", "item": [{"id": "obsolete-0", "class": "", "title": "<div class=\"chan\">hermes-general</div><div class=\"excerpt\">Mattermost migration: hosted options shortlisted (Elestio/Stackhero/AccuWeb, specs + links delivered); next-step decision pending</div><div class=\"meta\">open 4.0d · idle 4.0d · decision 4.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BPVBA0SRJ/p1786959206742179?thread_ts=1786956156.944409&amp;channel=C0BPVBA0SRJ&amp;message_ts=1786959206.742179\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}, {"id": "obsolete-1", "class": "", "title": "<div class=\"chan\">hermes-llm-model</div><div class=\"excerpt\">Gemini role validated as verified critic only (all other hypotheses rejected); refactored roadmap delivered — build go-ahead pending</div><div class=\"meta\">open 4.0d · idle 2.0d · decision 4.0d</div><a class=\"open\" href=\"https://enochlok.slack.com/archives/C0BQG6TKGBY/p1786933003667939?thread_ts=1786875301.217189&amp;channel=C0BQG6TKGBY&amp;message_ts=1786933003.667939\" target=\"_blank\" rel=\"noopener\">open thread &#8599;</a>"}]}]
+});
+document.querySelectorAll('.kanban-board').forEach(function (b) {
+  var c = b.querySelectorAll('.kanban-item').length;
+  var s = document.createElement('span'); s.className = 'count'; s.textContent = c;
+  b.querySelector('header .kanban-title-board').appendChild(s);
+});
+// column collapse (viewing preference; persisted in localStorage)
+var CK = 'kanban_collapsed';
+function cload() { try { return JSON.parse(localStorage.getItem(CK) || '[]'); } catch(e) { return []; } }
+function csave(a) { localStorage.setItem(CK, JSON.stringify(a)); }
+function cid(b) { return b.dataset.id; }
+function repaint() {
+  document.querySelectorAll('.kanban-board').forEach(function (bb) {
+    var b = bb.querySelector('.kanban-title-collapse'); if (!b) return;
+    var c = bb.classList.contains('collapsed');
+    b.textContent = c ? '▶' : '▼'; b.setAttribute('aria-expanded', String(!c));
+  });
+}
+var allBtn = document.getElementById('collAll');
+function setAllBtn() {
+  var n = document.querySelectorAll('.kanban-board').length;
+  allBtn.textContent = cload().length >= n ? 'Expand all' : 'Collapse all';
+}
+document.querySelectorAll('.kanban-board').forEach(function (b) {
+  var btn = document.createElement('button');
+  btn.type = 'button'; btn.className = 'kanban-title-collapse';
+  btn.setAttribute('aria-label', 'Toggle column');
+  btn.setAttribute('aria-expanded', 'true');
+  b.querySelector('header').insertBefore(btn, b.querySelector('header').firstChild);
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    b.classList.toggle('collapsed');
+    var a = cload(), i = a.indexOf(cid(b));
+    if (b.classList.contains('collapsed')) { if (i < 0) a.push(cid(b)); }
+    else { if (i >= 0) a.splice(i, 1); }
+    csave(a); repaint(); setAllBtn();
+  });
+  if (cload().indexOf(cid(b)) >= 0) b.classList.add('collapsed');
+});
+function collAll() {
+  var boards = Array.from(document.querySelectorAll('.kanban-board'));
+  var allCollapsed = cload().length >= boards.length;
+  var a = allCollapsed ? [] : boards.map(cid);
+  boards.forEach(function (b) { b.classList.toggle('collapsed', !allCollapsed); });
+  csave(a); repaint(); setAllBtn();
+}
+if (allBtn) allBtn.addEventListener('click', collAll);
+repaint(); setAllBtn();
+</script>
+</body>
+</html>
